@@ -1,0 +1,162 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "- %@" : {
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "- %@"
+          }
+        }
+      }
+    },
+    "ABV: %@" : {
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ABV: %@"
+          }
+        }
+      }
+    },
+    "Aquela que volta amigo fica" : {
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aquela que volta amigo fica"
+          }
+        }
+      }
+    },
+    "attribution_text" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Built by Spanky in his spare time\nfor those who are indecisive!"
+          }
+        },
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feito por Spanky no seu tempo livre\npara os indecisos!"
+          }
+        }
+      }
+    },
+    "Complexity: %@" : {
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Complexidade: %@"
+          }
+        }
+      }
+    },
+    "Congratulations!" : {
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parabéns!"
+          }
+        }
+      }
+    },
+    "Description:" : {
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descrição"
+          }
+        }
+      }
+    },
+    "Drinks List" : {
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lista de bebidas"
+          }
+        }
+      }
+    },
+    "Follow us on Instagram" : {
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Siga-nos no Instagram"
+          }
+        }
+      }
+    },
+    "I'll take one!" : {
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vou levar um!"
+          }
+        }
+      }
+    },
+    "Ingredients:" : {
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingredientes:"
+          }
+        }
+      }
+    },
+    "Start Over" : {
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recomeçar"
+          }
+        }
+      }
+    },
+    "Toca Da Raposa" : {
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toca Da Raposa"
+          }
+        }
+      }
+    },
+    "Visit Instagram" : {
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visite o Instagram"
+          }
+        }
+      }
+    },
+    "You've had every drink on the menu!" : {
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tomou todas as bebidas do menu!"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
