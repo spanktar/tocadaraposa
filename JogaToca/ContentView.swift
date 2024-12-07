@@ -8,6 +8,7 @@ struct ContentView: View {
     @State private var isSpinning: Bool = false // Prevents multiple clicks during spinning
     @State private var showCongratulations = false // Tracks if all drinks have been selected
     @State private var showDrinksList = false
+    @State private var isPulsing = false // Track pulsing state
 
     let resetHandler: (@escaping () -> Void) -> Void
 
@@ -55,19 +56,23 @@ struct ContentView: View {
                     }
                 } else {
                     VStack {
-                        // Button Section (Pinned to the Top)
                         Button(action: {
                             startSpinning() // Start the spin animation
                         }) {
                             Image("button") // Replace with your image asset
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 200, height: 200)
+                                .frame(width: 180, height: 180)
                                 .rotationEffect(.degrees(rotation)) // Apply rotation
+                                .scaleEffect(isPulsing ? 1.1 : 1.0) // Scale for pulsing effect
                                 .animation(
-                                    .interpolatingSpring(stiffness: 20, damping: 5)
-                                    .speed(isSpinning ? 1 : 0),
-                                    value: rotation
+                                    .easeInOut(duration: 1).repeatForever(autoreverses: true),
+                                    value: isPulsing // Pulsing animation
+                                )
+                                .animation(
+                                    .interpolatingSpring(stiffness: 21, damping: 6)
+                                        .speed(isSpinning ? 1 : 0),
+                                    value: rotation // Rotation animation
                                 )
                         }
                         .disabled(isSpinning) // Disable the button while spinning
@@ -75,6 +80,9 @@ struct ContentView: View {
                         .padding(.top, 9) // Add padding to move the button slightly down from the top edge
                         .background(Color.black)
                         .buttonStyle(PlainButtonStyle()) // Remove any default button styling
+                        .onAppear {
+                            isPulsing = true // Start the pulsing effect
+                        }
 
                         if let optionIndex = options.firstIndex(where: { $0.id == selectedOption?.id }) {
                             VStack(alignment: .center, spacing: 9) {
