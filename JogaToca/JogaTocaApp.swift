@@ -43,7 +43,6 @@ struct JogaTocaApp: App {
         clearViewState?() // Call the view-specific reset logic if provided
     }
 
-    // Reconcile loaded options with current DrinkOptionsData
     static func reconcileOptions(loaded: [DrinkOption], current: [DrinkOption]) -> [DrinkOption] {
         // Map the loaded options by ID for quick lookup
         var loadedDict = Dictionary(uniqueKeysWithValues: loaded.map { ($0.id, $0) })
@@ -54,6 +53,7 @@ struct JogaTocaApp: App {
             if let loadedOption = loadedDict[currentOption.id] {
                 var updatedOption = currentOption
                 updatedOption.isSelected = loadedOption.isSelected
+                updatedOption.opinion = loadedOption.opinion // Preserve opinion
                 return updatedOption
             } else {
                 // If it's a new drink, return it as-is

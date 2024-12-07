@@ -8,7 +8,7 @@ struct ContentView: View {
     @State private var isSpinning: Bool = false // Prevents multiple clicks during spinning
     @State private var showCongratulations = false // Tracks if all drinks have been selected
     @State private var showDrinksList = false
-    
+
     let resetHandler: (@escaping () -> Void) -> Void
 
     var body: some View {
@@ -78,62 +78,8 @@ struct ContentView: View {
 
                         if let optionIndex = options.firstIndex(where: { $0.id == selectedOption?.id }) {
                             VStack(alignment: .center, spacing: 9) {
-                                // Drink name
-                                Text(selectedOption!.name)
-                                    .font(.largeTitle)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.yellow)
-                                    .multilineTextAlignment(.center)
-
-                                // Drink image
-                                if !selectedOption!.imageName.isEmpty {
-                                    Image(selectedOption!.imageName)
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(height: 150)
-                                }
-
-                                // Two columns: Description and Ingredients
-                                HStack(alignment: .top) {
-                                    // Description column
-                                    VStack(alignment: .leading, spacing: 5) {
-                                        Text("Description:")
-                                            .font(.subheadline)
-                                            .fontWeight(.bold) // Make the label bold
-                                            .foregroundColor(.white)
-                                        ForEach(selectedOption!.description, id: \.self) { description in
-                                            Text("- \(description)")
-                                                .font(.subheadline)
-                                                .foregroundColor(.white)
-                                        }
-                                    }
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-
-                                    // Ingredients column
-                                    VStack(alignment: .leading, spacing: 5) {
-                                        Text("Ingredients:")
-                                            .font(.subheadline)
-                                            .fontWeight(.bold) // Make the label bold
-                                            .foregroundColor(.white)
-                                        ForEach(selectedOption!.ingredients, id: \.self) { ingredient in
-                                            Text("- \(ingredient)")
-                                                .font(.subheadline)
-                                                .foregroundColor(.white)
-                                        }
-                                    }
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                }
-                                .padding(.top, 9) // Add some space between the columns and the rest of the content
-
-                                // ABV and Complexity
-                                Text("ABV: \(selectedOption!.abv)")
-                                    .font(.subheadline)
-                                    .foregroundColor(.white)
-                                    .padding(.top, 6)
-
-                                Text("Complexity: \(selectedOption!.complexity)")
-                                    .font(.subheadline)
-                                    .foregroundColor(.white)
+                                // Reuse DrinkDetailsView for drink details
+                                DrinkDetailsView(drink: options[optionIndex])
 
                                 // "I'll take one!" Button
                                 Button(action: {
@@ -156,8 +102,6 @@ struct ContentView: View {
                             .frame(maxWidth: 300)
                             .frame(maxWidth: .infinity)
                         }
-
-
                         Spacer() // Push everything else to the top
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top) // Ensure everything stays at the top
@@ -212,7 +156,8 @@ struct ContentView: View {
 
     private func startSpinning() {
         // Filter out selected options
-        let unselectedOptions = options.filter { !$0.isSelected }
+//        let unselectedOptions = options.filter { !$0.isSelected }
+        let unselectedOptions = options.filter { !$0.isSelected && $0.opinion != false }
         guard !unselectedOptions.isEmpty else {
             // Show congratulations screen if all options are selected
             showCongratulations = true
@@ -245,13 +190,4 @@ struct ContentView: View {
             selectedOption = newOption
         }
     }
-
-
-//    private func resetSelection() {
-//        for index in options.indices {
-//            options[index].isSelected = false
-//        }
-//        showCongratulations = false
-//        selectedOption = nil
-//    }
 }

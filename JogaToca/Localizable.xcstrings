@@ -118,7 +118,14 @@
       }
     },
     "Reset All" : {
-
+      "localizations" : {
+        "pt-PT" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reiniciar"
+          }
+        }
+      }
     },
     "Start Over" : {
       "localizations" : {

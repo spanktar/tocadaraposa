@@ -7,21 +7,27 @@ struct DrinksListView: View {
     var body: some View {
         ZStack {
             // Black background for the entire screen
-            Color.black
-                .ignoresSafeArea()
+            Color.black.ignoresSafeArea()
 
             List {
                 // Section for drinks already had
                 Section(header: headerView(title: "Drinks You've Had Already")) {
-                    ForEach(options.filter { $0.isSelected }) { drink in
-                        drinkRow(drink)
+                    ForEach(options.indices.filter { options[$0].isSelected }, id: \.self) { index in
+                        NavigationLink(destination: DrinkDetails(drink: $options[index])) {
+                            drinkRow(options[index])
+                        }
+                        .listRowBackground(Color.black) // Set background color for the row
                     }
                 }
 
+
                 // Section for drinks you haven't had
                 Section(header: headerView(title: "Drinks You Haven't Had Yet")) {
-                    ForEach(options.filter { !$0.isSelected }) { drink in
-                        drinkRow(drink)
+                    ForEach(options.indices.filter { !options[$0].isSelected }, id: \.self) { index in
+                        NavigationLink(destination: DrinkDetails(drink: $options[index])) {
+                            drinkRow(options[index])
+                        }
+                        .listRowBackground(Color.black) // Set background color for the row
                     }
                 }
 
@@ -75,6 +81,7 @@ struct DrinksListView: View {
                     .scaledToFit()
                     .frame(width: 40, height: 40)
             }
+            
             VStack(alignment: .leading) {
                 Text(drink.name)
                     .font(.headline)
@@ -83,7 +90,20 @@ struct DrinksListView: View {
                     .font(.subheadline)
                     .foregroundColor(.gray)
             }
+            
+            Spacer() // Push thumbs to the right side
+
+            // Display thumbs up/down if opinion is not nil
+            if let opinion = drink.opinion {
+                Image(systemName: opinion ? "hand.thumbsup.fill" : "hand.thumbsdown.fill")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 20, height: 20)
+                    .foregroundColor(opinion ? .green : .red)
+            }
         }
-        .listRowBackground(Color.black)
+        .padding(.vertical, 5) // Add padding for better spacing
+        .listRowBackground(Color.black) // Match row background to the list
     }
+
 }

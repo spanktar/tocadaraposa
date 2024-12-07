@@ -7,8 +7,10 @@ struct DrinkOption: Identifiable, Codable, Equatable {
     let abv: String
     let ingredients: [String]
     let complexity: String
+    let glassType: String
     let imageName: String
     var isSelected: Bool = false // Tracks whether the drink has been selected
+    var opinion: Bool? = nil // Optional Bool to allow "no opinion" state
 }
 
 class DrinkOptionsStorage {
@@ -30,4 +32,5 @@ class DrinkOptionsStorage {
         return [] // Return an empty array if no data exists
     }
 }
+
 

@@ -8,6 +8,7 @@ let drinkOptions: [DrinkOption] = [
         abv: "18%",
         ingredients: ["Mezcal", "Horseradish", "Tomato", "Ginger", "Soy"],
         complexity: ".08",
+        glassType: "tumbler",
         imageName: "badger"
     ),
     DrinkOption(
@@ -17,6 +18,7 @@ let drinkOptions: [DrinkOption] = [
         abv: "25%",
         ingredients: ["Whisky", "Vermouth", "Bay Leaf", "Azores Cheese"],
         complexity: ".14",
+        glassType: "martini",
         imageName: "beaver"
     ),
     DrinkOption(
@@ -26,6 +28,7 @@ let drinkOptions: [DrinkOption] = [
         abv: "23%",
         ingredients: ["Gin", "Orange Blossom", "Jasmin", "Rose"],
         complexity: ".12",
+        glassType: "short",
         imageName: "blind_mouse"
     ),
     DrinkOption(
@@ -35,6 +38,7 @@ let drinkOptions: [DrinkOption] = [
         abv: "14%",
         ingredients: ["Whisky", "Azores Tea", "Papaya", "Dragon Fruit", "Passion Fruit"],
         complexity: ".02",
+        glassType: "tall",
         imageName: "blue_whale"
     ),
     DrinkOption(
@@ -44,6 +48,7 @@ let drinkOptions: [DrinkOption] = [
         abv: "19%",
         ingredients: ["Rum", "Geranium", "Vanilla", "Pumpkin", "Almond", "Lemon"],
         complexity: ".01",
+        glassType: "tumbler",
         imageName: "oriole"
     ),
     DrinkOption(
@@ -53,6 +58,7 @@ let drinkOptions: [DrinkOption] = [
         abv: "11%",
         ingredients: ["Run", "Lemon Verbena", "Pineapple", "Blood Sausage", "Ginger"],
         complexity: ".15",
+        glassType: "tumbler",
         imageName: "piglet"
     ),
     DrinkOption(
@@ -62,6 +68,7 @@ let drinkOptions: [DrinkOption] = [
         abv: "11%",
         ingredients: ["Tequila", "Grapefruit", "Kiwi", "IPA"],
         complexity: ".11",
+        glassType: "tall",
         imageName: "rafeiro"
     ),
     DrinkOption(
@@ -71,6 +78,7 @@ let drinkOptions: [DrinkOption] = [
         abv: "15%",
         ingredients: ["Tequila", "Eucalyptus", "Quince"],
         complexity: ".06",
+        glassType: "short",
         imageName: "red_panda"
     ),
     DrinkOption(
@@ -80,6 +88,7 @@ let drinkOptions: [DrinkOption] = [
         abv: "21%",
         ingredients: ["Rum", "Pitospore", "Basil", "Corn", "Coconut"],
         complexity: ".04",
+        glassType: "tumbler",
         imageName: "rooster"
     ),
     DrinkOption(
@@ -89,6 +98,7 @@ let drinkOptions: [DrinkOption] = [
         abv: "21%",
         ingredients: ["Rum", "Sea Shells", "Plum", "Pear", "Bee Pollen"],
         complexity: ".09",
+        glassType: "martini",
         imageName: "sea_urchin"
     ),
     DrinkOption(
@@ -98,6 +108,7 @@ let drinkOptions: [DrinkOption] = [
         abv: "28%",
         ingredients: ["Gin", "Oak Moss", "Walnut", "Almond"],
         complexity: ".13",
+        glassType: "martini",
         imageName: "starling"
     ),
     DrinkOption(
@@ -107,6 +118,7 @@ let drinkOptions: [DrinkOption] = [
         abv: "11%",
         ingredients: ["Tequila", "Cedar Leaf", "Orange", "Cape Gooseberry", "Olive Oil"],
         complexity: ".03",
+        glassType: "tall",
         imageName: "swallow"
     ),
     DrinkOption(
@@ -116,6 +128,7 @@ let drinkOptions: [DrinkOption] = [
         abv: "20%",
         ingredients: ["Whisky", "Marigold", "Elderflower", "Grape"],
         complexity: ".10",
+        glassType: "short",
         imageName: "tiger"
     ),
     DrinkOption(
@@ -125,6 +138,7 @@ let drinkOptions: [DrinkOption] = [
         abv: "21%",
         ingredients: ["Gin", "Citrus Leafs", "Grapefruit", "Mandarin", "Lemon"],
         complexity: ".05",
+        glassType: "martini",
         imageName: "unicorn"
     ),
     DrinkOption(
@@ -134,6 +148,7 @@ let drinkOptions: [DrinkOption] = [
         abv: "15%",
         ingredients: ["Vodka", "Sake", "Parsley", "Mint", "Grape", "Pear", "Cucumber"],
         complexity: ".07",
+        glassType: "tall",
         imageName: "water_snake"
     ),
 ]
@@ -144,5 +159,6 @@ let drinkOptions: [DrinkOption] = [
 //    abv: 10,
 //    ingredients: ["Gin", "Dry Vermouth"],
 //    complexity: 3,
+//    glassType: "",
 //    imageName: ""
 //),
