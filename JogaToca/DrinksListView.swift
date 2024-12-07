@@ -2,6 +2,7 @@ import SwiftUI
 
 struct DrinksListView: View {
     @Binding var options: [DrinkOption] // The full list of drinks
+    let resetHandler: (@escaping () -> Void) -> Void // Accept resetHandler closure
 
     var body: some View {
         ZStack {
@@ -13,47 +14,33 @@ struct DrinksListView: View {
                 // Section for drinks already had
                 Section(header: headerView(title: "Drinks You've Had Already")) {
                     ForEach(options.filter { $0.isSelected }) { drink in
-                        HStack {
-                            if !drink.imageName.isEmpty {
-                                Image(drink.imageName)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 40, height: 40)
-                            }
-                            VStack(alignment: .leading) {
-                                Text(drink.name)
-                                    .font(.headline)
-                                    .foregroundColor(.white) // White text
-                                Text("ABV: \(drink.abv)")
-                                    .font(.subheadline)
-                                    .foregroundColor(.gray) // Subtle gray text
-                            }
-                        }
-                        .listRowBackground(Color.black) // Set each row's background to black
+                        drinkRow(drink)
                     }
                 }
 
                 // Section for drinks you haven't had
                 Section(header: headerView(title: "Drinks You Haven't Had Yet")) {
                     ForEach(options.filter { !$0.isSelected }) { drink in
-                        HStack {
-                            if !drink.imageName.isEmpty {
-                                Image(drink.imageName)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 40, height: 40)
-                            }
-                            VStack(alignment: .leading) {
-                                Text(drink.name)
-                                    .font(.headline)
-                                    .foregroundColor(.white) // White text
-                                Text("ABV: \(drink.abv)")
-                                    .font(.subheadline)
-                                    .foregroundColor(.gray) // Subtle gray text
-                            }
-                        }
-                        .listRowBackground(Color.black) // Set each row's background to black
+                        drinkRow(drink)
                     }
+                }
+
+                // Reset All Button as a List Footer
+                Section {
+                    Button(action: {
+                        resetHandler {} // No additional view-specific state to reset here
+                    }) {
+                        Text("Reset All")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color.red)
+                            .cornerRadius(10)
+                    }
+                    .listRowBackground(Color.black) // Match the button's background to the list
+                    .padding(.top, 10)
                 }
             }
             .listStyle(InsetGroupedListStyle()) // Ensure consistent layout
@@ -78,5 +65,25 @@ struct DrinksListView: View {
             .foregroundColor(.white)
             .padding(.vertical, 5)
             .background(Color.black) // Ensure the header background is black
+    }
+
+    private func drinkRow(_ drink: DrinkOption) -> some View {
+        HStack {
+            if !drink.imageName.isEmpty {
+                Image(drink.imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 40, height: 40)
+            }
+            VStack(alignment: .leading) {
+                Text(drink.name)
+                    .font(.headline)
+                    .foregroundColor(.white)
+                Text("ABV: \(drink.abv)")
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
+            }
+        }
+        .listRowBackground(Color.black)
     }
 }

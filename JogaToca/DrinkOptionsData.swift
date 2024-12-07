@@ -2,6 +2,7 @@ import Foundation
 
 let drinkOptions: [DrinkOption] = [
     DrinkOption(
+        id: "badger",
         name: "Badger",
         description: ["Umami", "Spicy", "Flavorful"],
         abv: "18%",
@@ -10,6 +11,7 @@ let drinkOptions: [DrinkOption] = [
         imageName: "badger"
     ),
     DrinkOption(
+        id: "beaver_2",
         name: "Beaver 2.0",
         description: ["Bitter", "Woody", "Herbal"],
         abv: "25%",
@@ -18,6 +20,7 @@ let drinkOptions: [DrinkOption] = [
         imageName: "beaver"
     ),
     DrinkOption(
+        id: "blind_mouse",
         name: "Blind Mouse",
         description: ["Strong", "Dry-ish", "Floral"],
         abv: "23%",
@@ -26,6 +29,7 @@ let drinkOptions: [DrinkOption] = [
         imageName: "blind_mouse"
     ),
     DrinkOption(
+        id: "blue_whale",
         name: "Blue Whale",
         description: ["Refreshing", "Herbal", "Fruity"],
         abv: "14%",
@@ -34,6 +38,7 @@ let drinkOptions: [DrinkOption] = [
         imageName: "blue_whale"
     ),
     DrinkOption(
+        id: "oriole",
         name: "Oriole",
         description: ["Sour", "Velvety", "Vegetal"],
         abv: "19%",
@@ -42,6 +47,7 @@ let drinkOptions: [DrinkOption] = [
         imageName: "oriole"
     ),
     DrinkOption(
+        id: "piglet",
         name: "Piglet",
         description: ["Intense", "Exotic", "Savory"],
         abv: "11%",
@@ -50,6 +56,7 @@ let drinkOptions: [DrinkOption] = [
         imageName: "piglet"
     ),
     DrinkOption(
+        id: "rafeiro_2",
         name: "Rafeiro 2.0",
         description: ["Bitter", "Citrussy", "Refreshing"],
         abv: "11%",
@@ -58,6 +65,7 @@ let drinkOptions: [DrinkOption] = [
         imageName: "rafeiro"
     ),
     DrinkOption(
+        id: "red_panda",
         name: "Red Panda",
         description: ["Aromatic", "Acidic", "Refreshing"],
         abv: "15%",
@@ -66,6 +74,7 @@ let drinkOptions: [DrinkOption] = [
         imageName: "red_panda"
     ),
     DrinkOption(
+        id: "rooster",
         name: "Rooster",
         description: ["Sour", "Tropical", "Aromatic"],
         abv: "21%",
@@ -74,6 +83,7 @@ let drinkOptions: [DrinkOption] = [
         imageName: "rooster"
     ),
     DrinkOption(
+        id: "sea_urchin",
         name: "Sea Urchin",
         description: ["Sweet", "Fruity", "Intruiging"],
         abv: "21%",
@@ -82,6 +92,7 @@ let drinkOptions: [DrinkOption] = [
         imageName: "sea_urchin"
     ),
     DrinkOption(
+        id: "starling",
         name: "Starling",
         description: ["Strong", "Dry", "Mineral"],
         abv: "28%",
@@ -90,6 +101,7 @@ let drinkOptions: [DrinkOption] = [
         imageName: "starling"
     ),
     DrinkOption(
+        id: "swallow",
         name: "Swallow",
         description: ["Refreshing", "Acidic", "Easy"],
         abv: "11%",
@@ -98,6 +110,7 @@ let drinkOptions: [DrinkOption] = [
         imageName: "swallow"
     ),
     DrinkOption(
+        id: "tiger",
         name: "Tiger",
         description: ["Strong", "Floral", "Fruity"],
         abv: "20%",
@@ -106,6 +119,7 @@ let drinkOptions: [DrinkOption] = [
         imageName: "tiger"
     ),
     DrinkOption(
+        id: "unicorn",
         name: "Unicorn",
         description: ["Citrussy", "Herbal", "Floral"],
         abv: "21%",
@@ -114,6 +128,7 @@ let drinkOptions: [DrinkOption] = [
         imageName: "unicorn"
     ),
     DrinkOption(
+        id: "water_snake",
         name: "Water Snake",
         description: ["Refreshing", "Herbal", "Fruity"],
         abv: "15%",
@@ -124,6 +139,7 @@ let drinkOptions: [DrinkOption] = [
 ]
 
 //DrinkOption(
+//    id: UUID(),
 //    name: "",
 //    abv: 10,
 //    ingredients: ["Gin", "Dry Vermouth"],

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E5D3D08A2D04DD0100A45A57 /* DrinksDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D3D0892D04DCF700A45A57 /* DrinksDetailsView.swift */; };
 		E5DDE9392CF7B45700283388 /* JogaTocaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DDE9382CF7B45700283388 /* JogaTocaApp.swift */; };
 		E5DDE93B2CF7B45700283388 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DDE93A2CF7B45700283388 /* ContentView.swift */; };
 		E5DDE93D2CF7B45800283388 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5DDE93C2CF7B45800283388 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E5D3D0892D04DCF700A45A57 /* DrinksDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksDetailsView.swift; sourceTree = "<group>"; };
 		E5DDE9352CF7B45700283388 /* JogaToca.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JogaToca.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5DDE9382CF7B45700283388 /* JogaTocaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogaTocaApp.swift; sourceTree = "<group>"; };
 		E5DDE93A2CF7B45700283388 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		E5DDE9372CF7B45700283388 /* JogaToca */ = {
 			isa = PBXGroup;
 			children = (
+				E5D3D0892D04DCF700A45A57 /* DrinksDetailsView.swift */,
 				E5FC64212CFBA2FF00DF1B98 /* About.swift */,
 				E5FC641C2CF89C6D00DF1B98 /* DrinksListView.swift */,
 				E5DDE96A2CF7CA1D00283388 /* SplashView.swift */,
@@ -292,6 +295,7 @@
 				E5DDE96D2CF7CC6700283388 /* DrinkOptions.swift in Sources */,
 				E5DDE96F2CF7CC9700283388 /* DrinkOptionsData.swift in Sources */,
 				E5DDE9392CF7B45700283388 /* JogaTocaApp.swift in Sources */,
+				E5D3D08A2D04DD0100A45A57 /* DrinksDetailsView.swift in Sources */,
 				E5DDE96B2CF7CA1D00283388 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

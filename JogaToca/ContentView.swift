@@ -9,6 +9,8 @@ struct ContentView: View {
     @State private var showCongratulations = false // Tracks if all drinks have been selected
     @State private var showDrinksList = false
     
+    let resetHandler: (@escaping () -> Void) -> Void
+
     var body: some View {
         NavigationView { // Wrap everything in a NavigationView
             ZStack {
@@ -36,7 +38,10 @@ struct ContentView: View {
                             .padding()
 
                         Button(action: {
-                            resetSelection() // Optionally reset the selection
+                            resetHandler {
+                                showCongratulations = false
+                                selectedOption = nil
+                            }
                         }) {
                             Text("Start Over")
                                 .font(.headline)
@@ -179,7 +184,7 @@ struct ContentView: View {
                         Spacer() // Pushes the drinks button to the far right
 
                         // Drinks button (top-right corner)
-                        NavigationLink(destination: DrinksListView(options: $options)) {
+                        NavigationLink(destination: DrinksListView(options: $options, resetHandler: resetHandler)) {
                             Image(systemName: "wineglass.fill") // Cocktail glass icon
                                 .resizable()
                                 .scaledToFit()
@@ -242,11 +247,11 @@ struct ContentView: View {
     }
 
 
-    private func resetSelection() {
-        for index in options.indices {
-            options[index].isSelected = false
-        }
-        showCongratulations = false
-        selectedOption = nil
-    }
+//    private func resetSelection() {
+//        for index in options.indices {
+//            options[index].isSelected = false
+//        }
+//        showCongratulations = false
+//        selectedOption = nil
+//    }
 }
