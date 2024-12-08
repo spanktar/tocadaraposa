@@ -117,6 +117,12 @@
         }
       }
     },
+    "No More Choices" : {
+
+    },
+    "OK" : {
+
+    },
     "Reset All" : {
       "localizations" : {
         "pt-PT" : {
@@ -136,6 +142,9 @@
           }
         }
       }
+    },
+    "There are no more drinks that you haven't marked as 'dislike'." : {
+
     },
     "Toca Da Raposa" : {
       "localizations" : {

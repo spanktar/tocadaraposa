@@ -16,7 +16,11 @@ struct DrinkDetails: View {
                 HStack {
                     // Thumbs Up Button
                     Button(action: {
-                        localOpinion = true // Update local state
+                        if localOpinion == true {
+                            localOpinion = nil // Deselect if already selected
+                        } else {
+                            localOpinion = true // Set to "like"
+                        }
                     }) {
                         Image(systemName: localOpinion == true ? "hand.thumbsup.fill" : "hand.thumbsup")
                             .resizable()
@@ -32,7 +36,11 @@ struct DrinkDetails: View {
 
                     // Thumbs Down Button
                     Button(action: {
-                        localOpinion = false // Update local state
+                        if localOpinion == false {
+                            localOpinion = nil // Deselect if already selected
+                        } else {
+                            localOpinion = false // Set to "dislike"
+                        }
                     }) {
                         Image(systemName: localOpinion == false ? "hand.thumbsdown.fill" : "hand.thumbsdown")
                             .resizable()
@@ -43,7 +51,6 @@ struct DrinkDetails: View {
                     }
                     .background(Color.black)
                     .buttonStyle(PlainButtonStyle()) // Remove any default button styling
-
                 }
                 .padding()
             }

@@ -9,6 +9,7 @@ struct ContentView: View {
     @State private var showCongratulations = false // Tracks if all drinks have been selected
     @State private var showDrinksList = false
     @State private var isPulsing = false // Track pulsing state
+    @State private var showNoOptionsAlert = false // Tracks if the alert should be displayed
 
     let resetHandler: (@escaping () -> Void) -> Void
 
@@ -156,6 +157,13 @@ struct ContentView: View {
 
             }
             .navigationBarHidden(true) // Hide the navigation bar for the main view
+            .alert(isPresented: $showNoOptionsAlert) {
+                Alert(
+                    title: Text("No More Choices"),
+                    message: Text("There are no more drinks that you haven't marked as 'dislike'."),
+                    dismissButton: .default(Text("OK"))
+                )
+            }
         }
     }
 
@@ -164,11 +172,17 @@ struct ContentView: View {
 
     private func startSpinning() {
         // Filter out selected options
-//        let unselectedOptions = options.filter { !$0.isSelected }
-        let unselectedOptions = options.filter { !$0.isSelected && $0.opinion != false }
-        guard !unselectedOptions.isEmpty else {
-            // Show congratulations screen if all options are selected
+
+        let allDrinksSelected = options.allSatisfy { $0.isSelected }
+        if allDrinksSelected {
+            // Show congratulations screen if all drinks are selected
             showCongratulations = true
+            return
+        }
+        let unselectedOptions = options.filter { !$0.isSelected && $0.opinion != false }
+
+        if unselectedOptions.isEmpty {
+            showNoOptionsAlert = true
             return
         }
 
